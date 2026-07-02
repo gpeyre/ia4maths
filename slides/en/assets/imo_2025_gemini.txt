@@ -1,0 +1,759 @@
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Problem 1
+A line in the plane is called sunny if it is not parallel to any of the x-axis, the y-axis,
+and the line x + y = 0.
+Let n ⩾ 3 be a given integer. Determine all nonnegative integers k such that there
+exist n distinct lines in the plane satisfying both of the following:
+• for all positive integers a and b with a + b ⩽ n + 1, the point (a, b) is on at
+least one of the lines; and
+• exactly k of the n lines are sunny.
+
+Let n ⩾ 3 be a given integer. We want to determine all nonnegative integers k such
+that there exist n distinct lines in the plane that cover the set of points Pn = {(a, b) ∈
+Z+ × Z+ : a + b ⩽ n + 1}, and exactly k of these lines are sunny. A line is sunny if it is
+not parallel to the x-axis (Horizontal, H), the y-axis (Vertical, V), or the line x + y = 0
+(Diagonal, D, slope −1). Lines of these three types are called shady.
+We will show that the possible values for k are {0, 1, 3}.
+The proof relies on reducing the problem to the specific case where n = k and all lines
+must be sunny. Let C(k) be the assertion that Pk can be covered by k distinct sunny
+lines. We define P0 = ∅.
+1. The Reduction Principle
+Let L be a set of n distinct lines covering Pn . Let k be the number of sunny lines. Let
+NV , NH , ND be the number of V, H, D lines in L, respectively. Then NV + NH + ND =
+n − k.
+Lemma 1 (Structural Lemma). The NV vertical lines in L must be {x = 1, . . . , x =
+NV }. The NH horizontal lines must be {y = 1, . . . , y = NH }. The ND diagonal lines
+must be {x + y = s} for s = n + 2 − ND , . . . , n + 1.
+Proof. Consider the column Ca = Pn ∩ {x = a}. We have |Ca | = n + 1 − a. Suppose
+the line x = a is not in L. The points in Ca must be covered by the other lines in L.
+The NV vertical lines in L are distinct from x = a, so they do not cover any point in
+Ca . The remaining n − NV non-vertical lines each cover at most one point in Ca . Thus,
+|Ca | ≤ n − NV . n + 1 − a ≤ n − NV , which implies a ≥ NV + 1. By contraposition, if
+1 ≤ a ≤ NV , the line x = a must be in L. Since there are exactly NV vertical lines in L,
+these must be {x = 1, . . . , x = NV }. The argument for horizontal lines is symmetric.
+For diagonal lines, consider the anti-diagonal Ds = Pn ∩{x+y = s}. We have |Ds | = s−1.
+If x + y = s is not in L, the points in Ds must be covered by the n − ND lines with slope
+̸ −1. Thus, s − 1 ≤ n − ND , so s ≤ n + 1 − ND . By contraposition, if s ≥ n + 2 − ND ,
+=
+the line x + y = s must be in L.
+Theorem 1 (Reduction Theorem). For n ≥ 3 and 0 ≤ k ≤ n, a configuration of n
+distinct lines covering Pn with exactly k sunny lines exists if and only if C(k) is true.
+Proof. (⇒) Let L be such a configuration. Let NV , NH , ND be the counts of the shady
+lines, NV + NH + ND = n − k. By Lemma 1, the set of shady lines N is determined.
+Let R be the set of points in Pn not covered by N . R = {(a, b) ∈ Pn | a > NV , b >
+1
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+NH , a + b ≤ n + 1 − ND }. The k sunny lines S ⊂ L must cover R. Consider the
+translation T (a, b) = (a − NV , b − NH ) = (a′ , b′ ). If (a, b) ∈ R, then a′ ≥ 1, b′ ≥ 1. Also,
+a′ + b′ = a + b − (NV + NH ) ≤ (n + 1 − ND ) − (NV + NH ) = n + 1 − (n − k) = k + 1. T
+maps R bijectively to Pk . The translated lines T (S) cover Pk . Since translation preserves
+slopes, these k lines are distinct and sunny. Thus C(k) is true.
+(⇐) Suppose C(k) is true. Let Lk be k distinct sunny lines covering Pk . Let N = n − k.
+We construct a configuration for Pn . Let N be the set of N diagonal lines {x + y = s |
+s = k + 2, . . . , n + 1}. Let L = Lk ∪ N . This set has n lines. They are distinct since lines
+in Lk have slope ̸= −1 and lines in N have slope −1. They cover Pn . If (a, b) ∈ Pn , then
+2 ≤ a + b ≤ n + 1. If a + b ≤ k + 1, then (a, b) ∈ Pk , covered by Lk . If k + 2 ≤ a + b ≤ n + 1,
+then (a, b) is covered by N . The configuration has exactly k sunny lines.
+2. Analysis of the Core Problem C(k)
+We determine the values of k ≥ 0 for which Pk can be covered by k distinct sunny lines.
+1. k = 0. P0 = ∅. Covered by 0 lines. C(0) is true. 2. k = 1. P1 = {(1, 1)}. Covered
+by y = x (slope 1, sunny). C(1) is true. 3. k = 2. P2 = {(1, 1), (1, 2), (2, 1)}. The lines
+connecting any pair of these points are x = 1 (V), y = 1 (H), or x + y = 3 (D). All are
+shady. A sunny line can cover at most one point of P2 . To cover the 3 points, we need at
+least 3 sunny lines. Thus C(2) is false.
+4. k ≥ 3. Let Tk be the convex hull of Pk . Tk is the triangle with vertices V1 = (1, 1), V2 =
+(1, k), V3 = (k, 1). The edges of Tk lie on the lines x = 1 (V), y = 1 (H), and x + y = k + 1
+(D). These lines are shady.
+Let Bk be the set of points in Pk lying on the boundary of Tk . Each edge contains k
+points. Since the vertices are distinct (as k ≥ 2), the total number of points on the
+boundary is |Bk | = 3k − 3.
+Suppose Pk is covered by k sunny lines Lk . These lines must cover Bk . Let L ∈ Lk . Since
+L is sunny, it does not coincide with the lines containing the edges of Tk . A line that
+does not contain an edge of a convex polygon intersects the boundary of the polygon at
+most at two points. Thus, |L ∩ Bk | ≤ 2. The total coverage of Bk by Lk is at most 2k.
+We must have |Bk | ≤ 2k. 3k − 3 ≤ 2k, which implies k ≤ 3.
+Since we assumed k ≥ 3, we must have k = 3.
+5. k = 3. We verify C(3). P3 consists of 6 points: (1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (3, 1).
+We provide a covering with 3 sunny lines: L1 : y = x (slope 1). Covers (1, 1), (2, 2).
+L2 : 2x + y = 5 (slope −2). Covers (1, 3), (2, 1). L3 : x + 2y = 5 (slope −1/2). Covers
+(1, 2), (3, 1). These lines are sunny and cover P3 . C(3) is true.
+3. Conclusion
+The property C(k) is true if and only if k ∈ {0, 1, 3}. By the Reduction Theorem, for
+a given n ≥ 3, a configuration with k sunny lines exists if and only if C(k) is true and
+k ≤ n. Since n ≥ 3, the condition k ≤ n is satisfied for all k ∈ {0, 1, 3}.
+The possible values for k are 0, 1, and 3.
+
+2
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Problem 2
+Let Ω and Γ be circles with centres M and N , respectively, such that the radius
+of Ω is less than the radius of Γ. Suppose circles Ω and Γ intersect at two distinct
+points A and B. Line M N intersects Ω at C and Γ at D, such that points C, M ,
+N and D lie on the line in that order. Let P be the circumcentre of triangle ACD.
+Line AP intersects Ω again at E ̸= A. Line AP intersects Γ again at F ̸= A. Let H
+be the orthocentre of triangle P M N .
+Prove that the line through H parallel to AP is tangent to the circumcircle of
+triangle BEF .
+(The orthocentre of a triangle is the point of intersection of its altitudes.)
+
+Complete Proof
+1. Identification of P as the Excenter of △AM N .
+Let R1 and R2 be the radii of Ω (center M ) and Γ (center N ) respectively, with R1 < R2 .
+P is the circumcenter of △ACD, so P A = P C. Since A, C ∈ Ω, M A = M C = R1 . Thus
+P M is the perpendicular bisector of AC and bisects ∠AM C. The points C, M, N, D
+are collinear in this order. This implies that the ray M C is opposite to the ray M N .
+Therefore, ∠AM C and ∠AM N are supplementary. ∠AM C is the exterior angle of
+△AM N at M . Since P M bisects ∠AM C, P M is the external angle bisector of △AM N
+at M .
+Similarly, P A = P D and N A = N D = R2 . P N is the perpendicular bisector of AD
+and bisects ∠AN D. Since M, N, D are in order, the ray N D is opposite to the ray N M .
+Thus, ∠AN D is the exterior angle of △AM N at N . P N is the external angle bisector
+of △AM N at N .
+Therefore, P is the excenter of △AM N opposite to A. Consequently, the line AP is
+the internal angle bisector of ∠M AN . Let ∠M AN = 2ϕ. Since the circles intersect
+at two distinct points A and B, △AM N is non-degenerate, so 0 < 2ϕ < 180◦ , i.e.,
+0 < ϕ < 90◦ .
+2. Determining ∠EBF .
+By symmetry with respect to the line M N , △BM N ∼
+= △AM N . Thus ∠M BN =
+∠M AN = 2ϕ.
+We use directed angles modulo 180◦ . Let TM (B) and TN (B) be the tangents to Ω and Γ
+at B, respectively. Since TM (B) ⊥ M B and TN (B) ⊥ N B, we have ∡(TM (B), TN (B)) =
+∡(M B, N B).
+By the Tangent-Chord Theorem: In Ω, ∡(TM (B), BE) = ∡(AB, AE). In Γ, ∡(TN (B), BF ) =
+∡(AB, AF ). Since A, E, F are collinear on the line AP , the lines AE and AF are the
+same. Thus ∡(AB, AE) = ∡(AB, AF ).
+We compute ∡(BE, BF ): ∡(BE, BF ) = ∡(BE, TM (B))+∡(TM (B), TN (B))+∡(TN (B), BF )
+= −∡(AB, AE) + ∡(M B, N B) + ∡(AB, AF ) = ∡(M B, N B). Thus, the geometric angle
+∠EBF = ∠M BN = 2ϕ.
+
+3
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Since R1 ̸= R2 , △AM N is not isosceles, so AP (the angle bisector) is distinct from the
+altitude from A. Since AB is perpendicular to M N , AB is the altitude line. Thus B is
+not on AP . Also R1 ̸= R2 implies E ̸= F . Thus △BEF is non-degenerate. Let Σ be its
+circumcircle.
+3. Introduction of the Auxiliary Point V and its properties.
+Let V be the point such that AM V N is a parallelogram. We use vectors originating
+⃗ = AM
+⃗ + AN
+⃗ .
+from A. AV
+We calculate the lengths of AE and AF . In △AM E, M A = M E = R1 and ∠M AE = ϕ.
+Thus AE = 2R1 cos ϕ. Similarly, AF = 2R2 cos ϕ. Since R1 < R2 and cos ϕ > 0, AE <
+AF . A, E, F are collinear in this order on AP . EF = AF − AE = 2(R2 − R1 ) cos ϕ.
+⃗ − AV
+⃗ = AE
+⃗ − (AM
+⃗ + AN
+⃗ ).
+We calculate the distances V E and V F . V⃗E = AE
+2
+2
+2
+2
+⃗
+⃗
+⃗
+⃗
+⃗
+⃗
+V E = AE + AM + AN − 2AE · AM − 2AE · AN + 2AM · AN . AM = R1 , AN = R2 .
+⃗ AM
+⃗ = AE·R1 cos ϕ = 2R2 cos2 ϕ. AE·
+⃗ AN
+⃗ =
+∠M AN = 2ϕ. ∠M AE = ∠N AE = ϕ. AE·
+1
+⃗ · AN
+⃗ = R1 R2 cos(2ϕ) = R1 R2 (2 cos2 ϕ − 1).
+AE · R2 cos ϕ = 2R1 R2 cos2 ϕ. AM
+V E 2 = (2R1 cos ϕ)2 + R12 + R22 − 4R12 cos2 ϕ − 4R1 R2 cos2 ϕ + 2R1 R2 (2 cos2 ϕ − 1). V E 2 =
+R12 + R22 − 4R1 R2 cos2 ϕ + 4R1 R2 cos2 ϕ − 2R1 R2 . V E 2 = R12 + R22 − 2R1 R2 = (R2 − R1 )2 .
+So V E = R2 − R1 . A similar calculation shows V F = R2 − R1 . Thus V E = V F .
+4. V lies on the circumcircle Σ.
+We calculate ∠EV F using the Law of Cosines in the isosceles triangle △EV F . EF 2 =
+V E 2 + V F 2 − 2V E · V F cos(∠EV F ) = 2V E 2 (1 − cos(∠EV F )). (2(R2 − R1 ) cos ϕ)2 =
+2(R2 −R1 )2 (1−cos(∠EV F )). 4 cos2 ϕ = 2(1−cos(∠EV F )). cos(∠EV F ) = 1−2 cos2 ϕ =
+− cos(2ϕ). Since 2ϕ ∈ (0, 180◦ ), ∠EV F = 180◦ − 2ϕ.
+We have ∠EBF + ∠EV F = 2ϕ + (180◦ − 2ϕ) = 180◦ . To conclude that BEV F is cyclic,
+we must verify that B and V lie on opposite sides of the line AP . We set up a coordinate
+system with A at the origin (0, 0) and AP along the positive x-axis. We can orient it
+such that M = (R1 cos ϕ, R1 sin ϕ) and N = (R2 cos ϕ, −R2 sin ϕ). Then V = M + N has
+y-coordinate yV = (R1 − R2 ) sin ϕ. Since R1 < R2 and ϕ > 0, yV < 0.
+B is the reflection of A across the line M N . The line M N has the equation y − yM =
+1 +R2 ) sin ϕ
+m(x − xM ), where the slope is m = −(R
+(R2 −R1 ) cos ϕ . The y-intercept b (intersection with
+the axis perpendicular to AP through A) is yM − mxM . b = R1 sin ϕ − mR1 cos ϕ =
+2 ) sin ϕ
+2 sin ϕ
+R1 sin ϕ + R1 (RR12+R
+= 2RR12R−R
+. Since Ri > 0 and sin ϕ > 0, b > 0. The line M N
+−R1
+1
+passes ”above” A with respect to the y-axis. The reflection B of A(0, 0) across the line
+y = mx + b has y-coordinate yB = 2b/(m2 + 1) > 0. Since yV < 0 and yB > 0, V and B
+are on opposite sides of AP . Thus, BEV F is cyclic, and V lies on Σ.
+5. The Orthocenter H and the Tangency Condition.
+Let I be the incenter of △AM N . Since P is the excenter opposite to A, the points
+A, I, P are collinear on the line AP . The internal bisector M I and the external bisector
+M P at M are perpendicular. Similarly, N I ⊥ N P . Thus, the quadrilateral IM P N is
+cyclic. This circle is the circumcircle of △P M N . Let O be its center. IP is the diameter,
+so O is the midpoint of IP .
+H is the orthocenter of △P M N . By Sylvester’s theorem relating the circumcenter O and
+⃗ = AP
+⃗ + AM
+⃗ + AN
+⃗ −
+the orthocenter H, we have (using vectors originating from A): AH
+⃗
+⃗
+⃗
+⃗
+⃗
+⃗
+⃗
+⃗
+2AO. By definition of V , AV = AM + AN . AH = AP + AV − 2AO. The vector from V
+
+4
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+⃗ − AV
+⃗ = AP
+⃗ − 2AO.
+⃗ Since O is the midpoint of IP , 2AO
+⃗ = AI
+⃗ + AP
+⃗ .
+to H is V⃗H = AH
+⃗
+⃗
+⃗
+⃗
+⃗
+⃗
+V H = AP − (AI + AP ) = −AI = IA.
+⃗ is parallel to AP . Thus, the line segment
+Since I and A lie on the line AP , the vector IA
+V H is parallel to AP . The line through H parallel to AP is the line V H.
+We must show that the line V H is tangent to Σ. Since V ∈ Σ (Step 4), it suffices to
+show that V H is perpendicular to the radius at V . Let OΣ be the center of Σ. We need
+to show V H ⊥ OΣ V . Since V H ∥ AP , we need AP ⊥ OΣ V . The points E, F lie on AP .
+In Step 3, we proved V E = V F . Thus V lies on the perpendicular bisector of the chord
+EF . OΣ also lies on this bisector. Therefore, the line OΣ V is the perpendicular bisector
+of EF . Thus OΣ V ⊥ EF . Since EF lies on AP , OΣ V ⊥ AP .
+We conclude that V H ⊥ OΣ V . Therefore, the line V H, which is the line through H
+parallel to AP , is tangent to the circumcircle of triangle BEF at V .
+
+5
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Problem 3
+Let N denote the set of positive integers. A function f : N → N is said to be bonza if
+f (a) divides ba − f (b)f (a)
+for all positive integers a and b.
+Determine the smallest real constant c such that f (n) ⩽ cn for all bonza functions
+f and all positive integers n.
+
+We want to determine the smallest real constant c such that f (n) ⩽ cn for all bonza
+functions f : N → N and all n ∈ N. A function f is bonza if f (a) | ba − f (b)f (a) for all
+a, b ∈ N. Let P (a, b) denote this assertion.
+We will show that the smallest constant is c = 4.
+Part 1: Properties and Classification of Bonza Functions
+First, we establish some basic properties. P (a, a) implies f (a) | aa . P (1, 1) implies
+f (1) = 1. Let S be the set of primes p such that f (p) > 1. Since f (p) | pp , if p ∈ S, then
+f (p) = pk for some k ≥ 1.
+Lemma 1: If p ∈ S, then f (b) ≡ b (mod p) for all b ∈ N. Proof: P (p, b) =⇒ f (p) |
+bp − f (b)f (p) . Since p ∈ S, p | f (p). Thus bp ≡ f (b)f (p) (mod p). By Fermat’s Little
+Theorem (FLT), bp ≡ b (mod p). Since f (p) is a power of p, applying FLT repeatedly
+yields f (b)f (p) ≡ f (b) (mod p). Thus, b ≡ f (b) (mod p).
+Lemma 2 (Classification): The set S is either the set of all primes P, the empty set
+∅, or the singleton set {2}. Proof: Case 1: S is infinite. By Lemma 1, for any b ∈ N,
+f (b) − b is divisible by every prime in S. Since S is infinite, f (b) − b = 0, so f (b) = b for
+all b. Then f (p) = p > 1 for all primes p, so S = P.
+Q
+Case 2: S is finite. Let M = p∈S p. (If S = ∅, M = 1). Let q be a prime not in S.
+Then f (q) = 1. If S is non-empty, for any p ∈ S, Lemma 1 gives 1 = f (q) ≡ q (mod p).
+Thus q ≡ 1 (mod M ).
+Suppose S is finite and non-empty. Then M ≥ 2. Suppose M > 2. Consider A = M − 1.
+Since M > 2, 1 < A < M . We have gcd(A, M ) = 1. Let q0 be any prime factor of A.
+Then q0 ∤ M , so q0 ∈
+/ S. Thus q0 ≡ 1 (mod M ). This implies M | q0 − 1, so M ≤ q0 − 1.
+Since q0 | A, q0 ≤ A = M − 1. Combining these gives M ≤ q0 − 1 ≤ (M − 1) − 1 = M − 2.
+M ≤ M − 2, which is a contradiction. Therefore, if S is finite and non-empty, we must
+have M = 2. This means S = {2}. If S is empty, M = 1.
+Part 2: Establishing the Upper Bound c ≤ 4
+We analyze the three cases from Lemma 2.
+Case 1: S = P. We found f (n) = n. Then f (n)/n = 1.
+Case 2: S = ∅. f (p) = 1 for all primes p. Let n ∈ N. If f (n) > 1, let q be a prime factor
+of f (n). Since f (n) | nn , q | n. P (n, q) =⇒ f (n) | q n − f (q)f (n) . Since q ∈
+/ S, f (q) = 1.
+So f (n) | q n − 1. Since q | f (n), q | q n − 1. As q | n, q | q n . Thus q | 1. Contradiction. So
+f (n) = 1 for all n. f (n)/n ≤ 1.
+
+6
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Case 3: S = {2}. f (2) > 1, and f (p) = 1 for all odd primes p. First, we show f (n)
+is a power of 2 for all n. Let q be an odd prime factor of f (n). Then q | n. f (q) = 1.
+P (n, q) =⇒ f (n) | q n − f (q)f (n) = q n − 1. Since q | f (n), q | q n − 1. This is impossible
+as q | n implies q | q n . Thus f (n) is a power of 2.
+If n is odd, f (n) | nn (odd). So f (n) = 1.
+If n is even. Let n = 2k m, where k = v2 (n) ≥ 1 and m is odd. Let f (n) = 2e . Let b be
+any odd integer. f (b) = 1. P (n, b) =⇒ f (n) | bn − f (b)f (n) = bn − 1. So 2e | bn − 1.
+Thus e ≤ minb odd v2 (bn − 1).
+We need the following lemma to analyze the 2-adic valuation.
+K
+
+Lemma 3: Let X be an odd integer and K ≥ 1 an integer. Then v2 (X 2 − 1) =
+v2 (X 2 − 1) + K − 1. Proof: We use induction on K. Base case K = 1: v2 (X 2 − 1) =
+v2 (X 2 − 1) + 1 − 1. Inductive step: Assume it holds for K ≥ 1. We check K + 1.
+K+1
+K
+K
+v2 (X 2
+− 1) = v2 ((X 2 − 1)(X 2 + 1)). Since X is odd, X 2 ≡ 1 (mod 8). Since K ≥ 1,
+K
+K−1
+K−1
+K
+K
+≡ 12
+X 2 = (X 2 )2
+= 1 (mod 8). Thus X 2 + 1 ≡ 2 (mod 8), so v2 (X 2 + 1) = 1.
+K+1
+K
+v2 (X 2
+− 1) = v2 (X 2 − 1) + 1 = (v2 (X 2 − 1) + K − 1) + 1 = v2 (X 2 − 1) + K.
+k
+
+Now we analyze v2 (bn − 1) = v2 (b2 m − 1). Let X = bm . Since b, m are odd, X is
+k
+odd. By Lemma 3 (with K = k), v2 (bn − 1) = v2 (X 2 − 1) = v2 (X 2 − 1) + k − 1.
+We want to minimize this over odd b. X 2 − 1 = b2m − 1. Since bm is odd, (bm )2 ≡ 1
+(mod 8), so v2 (b2m − 1) ≥ 3. The minimum is achieved when b = 3. We calculate
+v2 (32m − 1) = v2 (9m − 1). 9m − 1 = (9 − 1)(9m−1 + · · · + 1). The second factor is a
+sum of m odd terms. Since m is odd, the sum is odd. v2 (9m − 1) = v2 (8) = 3. Thus,
+minb odd v2 (bn − 1) = 3 + (k − 1) = k + 2. So e ≤ k + 2.
+e
+
+k+2
+
+2
+2
+4
+The ratio is f (n)
+n = 2k m ≤ 2k m = m . Since m ≥ 1, f (n)/n ≤ 4.
+
+In all cases, f (n) ≤ 4n for all bonza functions f . Thus c ≤ 4.
+Part 3: Construction and Lower Bound c ≥ 4
+We construct a bonza function g(n) that achieves the bound 4. Define g(n) as follows:
+
+
+if n is odd
+1
+g(n) = 16 if n = 4
+
+
+2
+if n is even and n ̸= 4
+For n = 4, g(4) = 16, so g(4)/4 = 4. If g is bonza, then c ≥ 4.
+We verify that g is bonza. We check g(a) | ba − g(b)g(a) .
+Case 1: a is odd. g(a) = 1. The condition holds trivially.
+Case 2: a = 4. g(4) = 16. We need 16 | b4 − g(b)16 . If b is odd, g(b) = 1. We need
+16 | b4 − 1. For any odd b, b2 (mod 16) is in {1, 9}. So b4 ≡ 1 (mod 16). If b is even,
+v2 (b) ≥ 1. v2 (b4 ) ≥ 4. So 16 | b4 . g(b) is either 2 or 16. g(b) is even. v2 (g(b)16 ) ≥ 16. So
+16 | g(b)16 . The condition holds.
+Case 3: a is even and a ̸= 4. g(a) = 2. a ≥ 2. We need 2 | ba − g(b)2 . If b is odd, ba is odd.
+g(b) = 1. ba − g(b)2 is odd-1=even. If b is even. ba is even (since a ≥ 2). g(b) ∈ {2, 16}.
+g(b) is even, so g(b)2 is even. ba − g(b)2 is even. The condition holds.
+The function g(n) is bonza.
+
+7
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Conclusion
+We have proved that f (n) ≤ 4n for all bonza functions f , so c ≤ 4. We have constructed
+a bonza function g(n) such that g(4)/4 = 4, so c ≥ 4. Therefore, the smallest real
+constant c is 4.
+
+8
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Problem 4
+A proper divisor of a positive integer N is a positive divisor of N other than N itself.
+The infinite sequence a1 , a2 , . . . consists of positive integers, each of which has at
+least three proper divisors. For each n ⩾ 1, the integer an+1 is the sum of the three
+largest proper divisors of an .
+Determine all possible values of a1 .
+
+We want to determine all possible values of a1 such that the sequence defined by
+an+1 = S(an ) is an infinite sequence of positive integers, where S(N ) is the sum of the
+three largest proper divisors of N , and each an has at least three proper divisors (i.e.,
+the total number of divisors τ (an ) ≥ 4).
+Let R(N ) = S(N )/N . If τ (N ) ≥ 5, and 1 = d1 < d2 < d3 < d4 are the smallest divisors
+of N , then R(N ) = d12 + d13 + d14 .
+Step 1: Proving that an is even for all n.
+Suppose N is odd and τ (N ) ≥ 4. The divisors of N are odd. If τ (N ) ≥ 5, d2 ≥ 3, d3 ≥
+71
+5, d4 ≥ 7. R(N ) ≤ 13 + 15 + 17 = 105
+< 1. If τ (N ) = 4, N = p3 or N = pq for odd
+primes p < q. The proper divisors are 1, p, p2 or 1, p, q. S(p3 ) = 1 + p + p2 . For p ≥ 3,
+p3 − (1 + p + p2 ) = p2 (p − 1) − p − 1 ≥ 9(2) − 3 − 1 = 14 > 0. S(pq) = 1 + p + q. For
+p ≥ 3, q ≥ 5, pq − (1 + p + q) = (p − 1)(q − 1) − 2 ≥ 2 · 4 − 2 = 6 > 0. In all cases,
+S(N ) < N . Furthermore, the three largest proper divisors are odd, so their sum S(N ) is
+odd.
+If an were odd for some n. Since τ (an ) ≥ 4 by the problem statement, an+1 = S(an ) < an
+and an+1 is odd. By induction, (ak )k≥n would be a strictly decreasing infinite sequence
+of positive integers. This contradicts the Well-Ordering Principle. Thus, an is even for
+all n.
+Step 2: Proving that an is divisible by 3 for all n.
+Suppose N is even, τ (N ) ≥ 4, and 3 ∤ N . d2 = 2. Since 3 ∤ N , d3 ≥ 4. If τ (N ) ≥ 5,
+d4 ≥ 5. R(N ) ≤ 12 + 14 + 15 = 19
+20 < 1. If τ (N ) = 4. N = 8 or N = 2p (prime p ≥ 5).
+S(8) = 7 < 8. S(2p) = p + 3 < 2p. In all cases, S(N ) < N .
+We prove a lemma: Lemma: Let N be even, τ (N ) ≥ 4, and 3 ∤ N . If 3|S(N ), then
+S(N ) is odd. Proof: If τ (N ) = 4, S(8) = 7, S(2p) = p + 3. Since 3 ∤ p, 3 ∤ p + 3. So
+3 ∤ S(N ). The implication holds vacuously. If τ (N ) ≥ 5. R(N ) = 12 + d13 + d14 . Since 3 ∤ N ,
+3 +2d4
+3 ∤ di . If 3|S(N ), since 3 ∤ N , we must have v3 (R(N )) > 0. R(N ) = d3 d4 +2d
+. The
+2d3 d4
+denominator is not divisible by 3. The numerator X = d3 d4 + 2d3 + 2d4 must be divisible
+by 3. X ≡ d3 d4 − d3 − d4 ≡ (d3 − 1)(d4 − 1) − 1 (mod 3). X ≡ 0 =⇒ (d3 − 1)(d4 − 1) ≡ 1
+(mod 3). This requires d3 ≡ 2 and d4 ≡ 2 (mod 3). If 4|N . Since 3 ∤ N , the divisors start
+1, 2, 4. So d3 = 4. But 4 ≡ 1 (mod 3), contradicting d3 ≡ 2 (mod 3). Thus v2 (N ) = 1.
+N = 2M with M odd, 3 ∤ M . Let p be the smallest prime factor of M (p ≥ 5). d3 = p.
+We need p ≡ 2 (mod 3). d4 is the next smallest divisor. 2p ≡ 2(2) = 4 ≡ 1 (mod 3).
+Since d4 ≡ 2 (mod 3), d4 ̸= 2p. So d4 must be the next smallest divisor of M , call it m3 .
+d4 is odd. S(N ) = N/2+N/p+N/d4 = M +2M/p+2M/d4 . Since M is odd and p, d4 are
+
+9
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+odd divisors of M , M/p and M/d4 are odd integers. S(N ) = Odd + Even + Even = Odd.
+The lemma is proved.
+Now, suppose 3 ∤ an for some n. We know an is even and an+1 = S(an ) < an . If
+3|an+1 , by the Lemma applied to an , an+1 must be odd. This contradicts Step 1. Thus
+3 ∤ an+1 . By induction, (ak )k≥n is a strictly decreasing infinite sequence of positive
+integers. Contradiction. Therefore, 3|an for all n.
+Combining Step 1 and Step 2, 6|an for all n. Note that 6|N implies τ (N ) ≥ 4.
+Step 3: Analyzing the dynamics when 6|N .
+If 6|N , the smallest divisors are 1, 2, 3. The fourth smallest divisor d4 must be 4, 5, or
+6. R(N ) = 12 + 13 + d14 = 56 + d14 . (This holds even if τ (N ) = 4, i.e., N = 6, where
+S(6) = 6, R(6) = 1, and d4 is formally N = 6).
+We identify three regimes: Regime A (Growth): d4 = 4. Occurs if 12|N . R(N ) = 13/12.
+Regime B (Boost): d4 = 5. Occurs if 30|N and 4 ∤ N (v2 (N ) = 1). R(N ) = 31/30.
+Regime C (Fixed Point): d4 = 6. Occurs if 6|N, 4 ∤ N, 5 ∤ N . R(N ) = 1.
+Step 4: Evolution of the sequence and constraints on a1 .
+If an ∈ B. v2 (an ) = 1. an+1 = (31/30)an . v2 (an+1 ) = v2 (an ) + v2 (31/30) = 1 − 1 = 0.
+an+1 is odd. This contradicts Step 1. Thus, the sequence must remain in A ∪ C.
+If an ∈ A. an+1 = (13/12)an . v2 (an+1 ) = v2 (an ) − 2. v3 (an+1 ) = v3 (an ) − 1. Since
+6|ak for all k, v2 (ak ) ≥ 1 and v3 (ak ) ≥ 1. As the valuations decrease in Regime A, the
+sequence cannot stay in A indefinitely. It must eventually reach Regime C and stabilize
+there (an+1 = an ).
+In Regimes A (R = 13/12) and C (R = 1), v5 (R(N )) = 0. Thus v5 (an ) is constant. Let L
+be the stable value in C. By definition of C, 5 ∤ L. So v5 (L) = 0. Therefore, v5 (a1 ) = 0.
+Step 5: Characterization of a1 .
+Let K ≥ 0 be the number of steps the sequence spends in Regime A before reaching
+Regime C. a1 , . . . , aK ∈ A (if K ≥ 1) and aK+1 ∈ C. Since 5 ∤ a1 , 5 ∤ an for all n.
+Let A = v2 (a1 ) and B = v3 (a1 ). aK+1 = (13/12)K a1 . v2 (aK+1 ) = A − 2K. v3 (aK+1 ) =
+B − K. Since aK+1 ∈ C, we must have v2 (aK+1 ) = 1 (as 6|aK+1 and 4 ∤ aK+1 ) and
+v3 (aK+1 ) ≥ 1. A − 2K = 1 =⇒ A = 2K + 1. B − K ≥ 1 =⇒ B ≥ K + 1.
+We verify that these conditions are sufficient. We must ensure ai ∈ A for 1 ≤ i ≤ K.
+This means 12|ai . For 1 ≤ i ≤ K: v2 (ai ) = A − 2(i − 1) = 2K + 1 − 2i + 2 = 2(K − i) + 3.
+Since i ≤ K, v2 (ai ) ≥ 3. v3 (ai ) = B − (i − 1) ≥ (K + 1) − (i − 1) = K − i + 2. Since
+i ≤ K, v3 (ai ) ≥ 2. Thus 23 · 32 = 72 divides ai . This implies 12|ai , so ai ∈ A. This also
+ensures that ai+1 = (13/12)ai is an integer. The sequence is valid.
+We express the possible values of a1 . a1 = 22K+1 3B M , where K ≥ 0, B ≥ K + 1, and
+M is a positive integer such that gcd(M, 30) = 1 (since v5 (a1 ) = 0). We rewrite this
+as: a1 = (22K+1 3K+1 ) · (3B−(K+1) M ). 22K+1 3K+1 = (2 · 4K ) · (3 · 3K ) = 6 · (12K ). Let
+J = 3B−K−1 M . J is a positive integer. Since gcd(M, 30) = 1, J is not divisible by 2 or 5.
+That is, gcd(J, 10) = 1. Conversely, any positive integer J such that gcd(J, 10) = 1 can be
+represented in this form for a given K (by taking B = K + 1 + v3 (J) and M = J/3v3 (J) ).
+The set of all possible values of a1 consists of the integers of the form 6J · 12K , where
+K ≥ 0 is an integer and J is a positive integer such that gcd(J, 10) = 1.
+
+10
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Problem 5
+Alice and Bazza are playing the inekoalaty game, a two-player game whose rules
+depend on a positive real number λ which is known to both players. On the nth
+turn of the game (starting with n = 1) the following happens:
+• If n is odd, Alice chooses a nonnegative real number xn such that
+x1 + x2 + · · · + xn ⩽ λn.
+• If n is even, Bazza chooses a nonnegative real number xn such that
+x21 + x22 + · · · + x2n ⩽ n.
+If a player cannot choose a suitable number xn , the game ends and the other player
+wins. If the game goes on forever, neither player wins. All chosen numbers are
+known to both players.
+Determine all values of λ for which Alice has a winning strategy and all those for
+which Bazza has a winning strategy.
+
+We determine the values of λ for which Alice
+and those for which
+Pn has a winning strategy
+Pn
+2
+Bazza has a winning strategy. Let Sn = i=1 xi and Qn = i=1 xi . Alice (A) plays at
+odd n, ensuring xn ≥ 0 and Sn ≤ λn. Bazza (B) plays at even n, ensuring xn ≥ 0 and
+Qn ≤ n. The critical value for λ is √12 .
+Case 1: 0 < λ < √12 . Bazza has a winning strategy.
+√
+Let δ = 2 − 2λ. Since λ < √12 , we have δ > 0.
+Bazza’s strategyp(B-MaxQ) is to ensure Q2k = 2k at every turn n = 2k. This requires
+choosing x2k = 2k − Q2k−1 . This is feasible if Q2k−1 ≤ 2k.
+Let Ck be the budget available to Alice at the start of turn 2k − 1: Ck = λ(2k − 1) − S2k−2
+(with S0 = 0). Alice must choose x2k−1 ∈ [0, Ck ]. If Ck < 0, Alice loses immediately.
+We analyze the evolution of Ck , assuming the game continues and Bazza follows B-MaxQ.
+Ck+1 = λ(2k + 1) − S2k = Ck + 2λ − (x2k−1 + x2k ).
+If Bazza successfully follows B-MaxQ up to turn 2k, then Q2k = 2k and Q2k−2 = 2k − 2.
+Thus, x22k−1 + x22k = Q2k − Q2k−2 = 2. Since xi ≥ 0, (x2k−1 + x2k )2 = 2 + 2x2k−1 x2k ≥ 2,
+√
+so x2k−1 + x2k ≥ 2.
+√
+Therefore, Ck+1 ≤ Ck + 2λ − 2 = Ck − δ.
+We must verify that B-MaxQ is always feasible as long as the game continues (i.e., Ck ≥ 0).
+We proceed by induction. C1 = λ. Since δ √
+> 0, if Ck ≥ 0, the sequence Ck is strictly
+√
+decreasing. Thus Ck ≤ C1 = λ. Since λ < 1/ 2. Alice must choose x2k−1 ≤ Ck < 1/ 2.
+If Bazza maintained Q2k−2 = 2k − 2, then Q2k−1 = Q2k−2 + x22k−1 = 2k − 2 + x22k−1 <
+2k − 2 + 1/2 = 2k − 3/2. Since Q2k−1 < 2k, Bazza can choose x2k to achieve Q2k = 2k.
+B-MaxQ is always feasible.
+
+11
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+Since Ck+1 ≤ Ck − δ, the budget decreases by at least δ in each round pair. Ck ≤
+C1 − (k − 1)δ = λ − (k − 1)δ. Since λ is fixed and δ > 0, there exists an integer K
+such that (K − 1)δ > λ. For this K, CK < 0. At turn 2K − 1, Alice needs to choose
+x2K−1 ≥ 0 such that x2K−1 ≤ CK . Since CK < 0, no such choice exists. Bazza wins.
+Case 2: λ > √12 . Alice has a winning strategy.
+√
+
+K 2
+Consider the function h(K) = 2K−1
+for K ≥ 1. h(K) is strictly decreasing and
+√
+√
+limK→∞ h(K) = 1/ 2. Since λ > 1/ 2, √
+there exists an integer K ≥ 1 such that
+λ > h(K). This implies L = λ(2K − 1) > K 2.
+
+Alice’s strategy (A-Spike-K): Play x2i−1 = 0 for i = 1, . . . , K − 1. At turn 2K − 1, play
+the maximum possible value.
+First, we verify the feasibility. For i < K, Alice plays x2i−1 = 0. She needs S2i−1 =
+S2i−2 ≤ λ(2i − 1). Bazza is constrained
+by Q2i−2p≤ 2(i − 1). By the QM-AM
+p
+√ inequality
+(or Cauchy-Schwarz), S2i−2 ≤ (i − 1)Q2i−2 ≤ √(i − 1)2(i − 1) = (i − 1) 2. We check
+√
+2
+the constraint: (i − 1) 2 ≤ λ(2i − 1), or λ ≥ (i−1)
+2i−1 . The RHS is an increasing sequence
+√
+√
+converging to 1/ 2. Since λ > 1/ 2, the strategy is feasible.
+Now we analyze the outcome. Let N = K − 1. Bazza has made N moves y√
+i = x2i
+(i = 1, √
+. . . , N ). At turn
+√ 2K − 1, Alice
+√ plays x2K−1 = L − S2N . Since S2N ≤ N 2 and
+L > K 2 = (N + 1) 2, x2K−1 > 2 > 0.
+Alice wins if Bazza cannot move at turn 2K, i.e., Q2K−1 > 2K. Q2K−1 = Q2N + (L −
+S2N )2 .
+P
+Bazza aims to minimize this quantity subject to his constraints: yi ≥ 0 and ij=1 yj2 ≤ 2i.
+√
+These constraints imply Q2N ≤ 2N , and consequently S2N ≤ N 2.
+√
+√
+2 . Consider the strategy y ∗ = ( 2, . . . , 2). This is
+Let F (y) = Q2N (y) +P
+(L − S
+(y))
+2N
+√
+√
+feasible for Bazza as ij=1 ( 2)2 = 2i. Let S ∗ = N 2 and Q∗ = 2N .
+∗
+Let y be any feasible strategy for Bazza.PLet ∆S
+0. We compare
+√ =2 S − S2N (y) ≥ √
+∗
+F (y) with F (y ). We use the identity
+(y
+−
+2)
+=
+Q
+(y)
+−
+2
+2S√2N (y) + 2N .
+2N
+√
+√i 2
+P
+∗
+Q√
+− 2N =
+(yi − 2) P
++ 2 2S
+2N (y) − Q = Q2N (y)√
+√2N (y) −√4N . 2 2S2N (y) =
+2 2(S ∗ − ∆S) = 4N − 2 2∆S. Q2N (y) − Q∗ = (yi − 2)2 − 2 2∆S.
+
+F (y) − F (y ∗ ) = Q2N (y) − Q∗ + (L − S2N (y))2 − (L − S ∗ )2 . (L − S2N (y))2 = (L − (S ∗ −
+∆S))2 = (L − S ∗ )2 + 2(L − S ∗ )∆S + (∆S)2 .
+√
+√
+
+P
+F (y) − F (y ∗ ) =
+(yi − 2)2 − 2 2∆S + 2(L − S ∗ )∆S + (∆S)2 . F (y) − F (y ∗ ) =
+√
+√
+P
+(yi − 2)2 + 2(L − S ∗ − 2)∆S + (∆S)2 .
+√
+√
+√
+√
+∗ +
+∗ −
+By the choice of K,
+L
+>
+K
+2
+=
+(N
++
+1)
+2
+=
+S
+2.
+Let
+ϵ
+=
+L
+−
+S
+2 > 0.
+√ 2
+P
+∗
+2
+F (y) − F (y ) =
+(yi − 2) + 2ϵ∆S + (∆S) . Since all terms are non-negative,
+F (y) ≥ F (y ∗ ). The minimum value of Q2K−1 is F (y ∗ ).
+√
+√
+√
+Q2K−1 ≥ F (y ∗ ) = 2N + (L − N 2)2 = 2N + ( 2 + ϵ)2 . Since ϵ > 0, ( 2 + ϵ)2 > 2.
+Q2K−1 > 2N + 2 = 2K. Bazza cannot move at turn 2K. Alice wins.
+Case 3: λ = √12 . Neither player has a winning strategy.
+We show that both players have a strategy to ensure the game continues forever (a
+draw).
+
+12
+
+Gemini Deep Think for International Mathematical Olympiad 2025
+
+1. Alice’s drawing strategy (A-Zero): x2k−1 = 0 for all k. We verify the game continues
+forever. Alice’s feasibility at turn 2k − 1: We need S2k−2 ≤ √
+λ(2k − 1). Bazza maximizes
+√
+S2k−2 subject to Q2k−2 ≤ 2k − 2, achieving at most (k − 1) 2. We check: (k − 1) 2 ≤
+√1 (2k −1) ⇐⇒ 2k −2 ≤ 2k −1. True. Bazza’s survival at turn 2k: We need Q2k−1 ≤ 2k.
+2
+Q2k−1 = Q2k−2 ≤ 2k − 2 < 2k. Bazza survives. Alice’s survival at turn 2k + 1: We
+√ need
+S2k ≤ λ(2k
++
+1).
+Bazza
+maximizes
+S
+subject
+to
+Q
+≤
+2k,
+achieving
+at
+most
+k
+2. We
+2k
+2k
+√
+check: k 2 ≤ √12 (2k + 1) ⇐⇒ 2k ≤ 2k + 1. True. The game continues forever. Bazza
+cannot win.
+2. Bazza’s drawing strategy (B-MaxQ): Q2k = 2k. We verify the game continues
+forever. Bazza’s
+follows B-MaxQ,
+√ feasibility (survival). As shown in Case 1, if Bazza
+√
+1
+√
+S2k−2 ≥ (k −1) 2. Alice’s budget Ck = λ(2k −1)−S2k−2 . Ck ≤ 2 (2k −1)−(k −1) 2 =
+√
+2k−1−2(k−1)
+√
+√1 . Alice must choose x2k−1 ≤ 1/ 2. Then Q2k−1 = 2k − 2 + x2
+=
+2k−1 ≤
+2
+2
+2k − 2 + 1/2 < 2k. B-MaxQ is feasible. Bazza survives.
+√
+Alice’s survival. We must show
+Ck > 0 for all k. C1 = 1/ 2 > 0. Ck+1 = Ck +
+√
+2λ − (x2k−1 + x2k ) = Ck + 2 − (x2k−1 + x2k ). Bazza ensures x22k−1 + x22k = 2. Let
+√
+√
+g(t) = t + 2 − t2 . Ck+1 = Ck + 2 − g(x2k−1 ). Alice chooses x2k−1 ∈ [0, Ck ]. To
+ensure Alice
+√ the next turn. Since
+√ survives, we check the minimum possible budget for
+Ck ≤ 1/ 2 < 1 and g(t) is increasing on [0, 1] (as g ′ (t) = 1 − t/ 2 − t2 > 0 for
+q t < 1),
+√
+√
+g(x2k−1 ) is maximized when x2k−1 = Ck . Ck+1 ≥ Ck + 2 − g(Ck ) = 2 − 2 − Ck2 .
+q
+√
+If Ck > 0, then 2 − Ck2 < 2, so Ck+1 > 0. By induction, Ck > 0 for all k. Alice
+survives. The game continues forever. Alice cannot win.
+Conclusion: Alice has a winning strategy if and only if λ > √12 . Bazza has a winning
+strategy if and only if 0 < λ < √12 . If λ = √12 , neither player has a winning strategy.
+
+13
+
+

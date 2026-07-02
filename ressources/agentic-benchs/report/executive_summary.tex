@@ -1,0 +1,219 @@
+\documentclass[10pt]{article}
+
+\usepackage[a4paper,margin=1.55cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{pdflscape}
+\usepackage{caption}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt}
+\setlist[enumerate]{leftmargin=*,topsep=2pt,itemsep=1pt}
+\renewcommand{\arraystretch}{1.17}
+
+\definecolor{header}{RGB}{36,51,66}
+\definecolor{lightblue}{RGB}{232,240,248}
+\definecolor{lightgreen}{RGB}{235,247,237}
+\definecolor{lightyellow}{RGB}{255,247,222}
+\definecolor{lightred}{RGB}{252,235,232}
+\definecolor{lightgray}{RGB}{245,246,248}
+\definecolor{darkgreen}{RGB}{28,104,58}
+\definecolor{darkyellow}{RGB}{130,92,0}
+\definecolor{darkred}{RGB}{139,45,38}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\project}[1]{\path{#1}}
+\newcommand{\good}{\textcolor{darkgreen}{Good}}
+\newcommand{\mostly}{\textcolor{darkgreen}{Mostly}}
+\newcommand{\partcov}{\textcolor{darkyellow}{Partial}}
+\newcommand{\weak}{\textcolor{darkred}{Weak}}
+\newcommand{\missing}{\textcolor{darkred}{Missing}}
+
+\title{\vspace{-1.4cm}\textbf{Executive Summary}\\Comparative Assessment of Nine Agentic Projects}
+\author{Generated from \texttt{report/project\_assessment.md}}
+\date{June 18, 2026}
+
+\begin{document}
+\maketitle
+\vspace{-0.45cm}
+
+\section*{Decision Summary}
+
+Nine independent project directories were audited against \texttt{todo.md};
+their full names appear in the ranking and recap tables below.
+The assignment asked for a PyTorch pedagogical notebook for the three-Dirac
+stochastic interpolant, comparisons across schedules and optimal transport,
+a Gaussian-to-Gaussian closed-form analysis with a precise theorem, generated
+figures, and a polished LaTeX article.
+
+\textbf{Recommendation.} Use \project{emmanuel/} as the best full research
+artifact, or \project{codex-gabriel/} as the best compact PyTorch-first baseline.
+\project{openclaw-jeremie/} is the strongest upper-mid repository and is worth mining
+for PyTorch structure and finite-assignment comparisons, but its Gaussian theory
+still needs the explicit noncommuting closed form. \project{hermes-jeremie/} is a clean
+PyTorch/test/CI submission just below \project{openclaw-jeremie/}, but its notebooks are
+unexecuted and its Gaussian theorem remains commuting/time-ordered only.
+\project{claude-gabriel/} and \project{codex-kimia/} contain useful material, but their
+Gaussian theory should not be reused without repair. \project{antigravity-antoine/}
+is stronger than \project{antigravity-olivier/} on PyTorch delivery, but remains
+a thin demonstration rather than a complete solution.
+
+\begin{center}
+\centering
+\captionof*{table}{Overall ranking}
+\begin{tabularx}{\textwidth}{>{\bfseries}c L{4.2cm} c Y}
+\toprule
+Rank & Project & Overall & Executive interpretation \\
+\midrule
+1 & \project{emmanuel/} & 9.1 & Best complete research artifact: strongest paper, broadest reproducibility wrapper, passing tests, executed notebooks, and clearest Gaussian endpoint theorem. \\
+2 & \project{codex-gabriel/} & 8.8 & Best compact baseline: PyTorch-centered, reproducible, mathematically correct for the central theorem, and supported by lightweight checks. \\
+3 & \project{openclaw-jeremie/} & 8.2 & Strongest upper-mid submission: excellent repository, executed notebooks, PyTorch code, source paper, and honest time-ordered Gaussian treatment, but missing explicit general \(T_t\). \\
+4 & \project{hermes-jeremie/} & 7.7 & Strong PyTorch repository with passing tests and a cautious Gaussian theorem, but unexecuted notebooks and no explicit general \(T_t\). \\
+5 & \project{claude-gabriel/} & 7.1 & Strong notebooks and paper shell, but the Gaussian theorem is overclaimed and the general noncommuting closed form is missing. \\
+6 & \project{codex-kimia/} & 7.0 & Clean compact repository with source and PDFs, but only proves the commuting Gaussian case and has a Torch/OpenMP reproducibility issue. \\
+7 & \project{codex-clement/} & 6.2 & Helpful PDF and PyTorch sketch, but no LaTeX source, no dependency file, unexecuted notebooks, and no general \(T_t\). \\
+8 & \project{antigravity-antoine/} & 5.8 & Executed PyTorch notebooks and source PDF, but missing dependency/test infrastructure and the closed-form Gaussian \(T_t\). \\
+9 & \project{antigravity-olivier/} & 5.4 & Partial visual and mathematical draft, but not PyTorch-based and mathematically unreliable in the noncommuting Gaussian proof. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\clearpage
+\section*{Score Recap}
+
+\begin{center}
+\centering
+\captionof*{table}{Detailed scores from the audit}
+\small
+\begin{tabularx}{\textwidth}{L{4.0cm} c c c c c Y}
+\toprule
+Project & Math & Code & Paper & Goal & Overall & Main limiting factor \\
+\midrule
+\project{antigravity-olivier/} & 5.5 & 5.0 & 5.5 & 5.5 & 5.4 & NumPy/SciPy instead of PyTorch; flawed noncommuting Gaussian proof; weak reproducibility. \\
+\project{antigravity-antoine/} & 5.8 & 6.0 & 5.5 & 5.8 & 5.8 & Executed PyTorch notebooks and source PDF, but no dependency file, no tests, weak OT claim, and no closed-form Gaussian \(T_t\). \\
+\project{codex-clement/} & 7.0 & 5.5 & 6.5 & 6.0 & 6.2 & Missing source/rebuild layer and general noncommuting Gaussian formula. \\
+\project{codex-kimia/} & 7.0 & 7.0 & 7.0 & 7.0 & 7.0 & Stops at commuting Gaussian theorem; documented figure build failed without unsafe OpenMP workaround. \\
+\project{claude-gabriel/} & 6.5 & 7.5 & 7.0 & 7.2 & 7.1 & Good implementation, but global Gaussian iff theorem is stronger than the proof supports. \\
+\project{hermes-jeremie/} & 7.8 & 8.0 & 7.5 & 7.6 & 7.7 & Clean PyTorch/test/CI repo, but notebooks are unexecuted and Gaussian theory lacks explicit general \(T_t\). \\
+\project{openclaw-jeremie/} & 8.2 & 8.6 & 8.0 & 8.2 & 8.2 & Excellent PyTorch/repo execution, but no explicit general noncommuting \(T_t\) formula. \\
+\project{codex-gabriel/} & 9.0 & 9.0 & 8.0 & 9.0 & 8.8 & Mostly polish: clarify VP convention, improve float placement, and add stronger environment pinning. \\
+\project{emmanuel/} & 9.3 & 8.8 & 9.0 & 9.2 & 9.1 & Strongest overall, but main numerical code is NumPy/SciPy-first rather than PyTorch-native. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{landscape}
+\section*{Requirement Coverage Recap}
+
+\begin{center}
+\centering
+\captionof*{table}{Requirement-by-requirement coverage}
+\tiny
+\begin{tabularx}{\linewidth}{L{2.4cm} Y Y Y Y Y Y Y Y Y}
+\toprule
+Requirement & \project{antigravity-olivier/} & \project{antigravity-antoine/} & \project{codex-clement/} & \project{codex-kimia/} & \project{claude-gabriel/} & \project{hermes-jeremie/} & \project{openclaw-jeremie/} & \project{codex-gabriel/} & \project{emmanuel/} \\
+\midrule
+Three-Dirac notebook & \partcov: NumPy/SciPy & \mostly: executed, PyTorch/SciPy & \partcov: unexecuted & \mostly: PyTorch, mostly executed & \good: executed, rich & \partcov: PyTorch but unexecuted & \good: executed, PyTorch & \good: executed, PyTorch & \good: executed, NumPy/SciPy-first \\
+Closed-form density and velocity & \partcov: derived, not PyTorch & \mostly: correct PyTorch formula & \mostly: PyTorch utility & \good: PyTorch & \good: PyTorch & \good: PyTorch module/tests & \good: PyTorch diagnostics & \good: PyTorch checks & \mostly: tested; PyTorch secondary \\
+Three schedules & \partcov: VP endpoint issue & \mostly: endpoint-consistent & \mostly: stops before endpoint & \mostly: endpoint clamping & \good: exact endpoints & \good: endpoint tests & \good: endpoint tests & \good: exact endpoints & \good: tested and extended \\
+OT comparison & \partcov: linear OT only & \weak: nearest claim not proved & \partcov: unexecuted sketch & \mostly: approximate dual & \mostly: symmetric sectors & \partcov: greedy OT-like & \good: exact finite balanced & \good: derivation and rays & \good: strongest Laguerre OT \\
+Pedagogical exposition & \partcov: thin notebook role & \partcov: executed but thin & \partcov: concise, unexecuted & \mostly: compact note & \good: strong notebooks & \partcov: generated, unexecuted & \good: exposed tensors & \good: strong notebooks & \good: notebooks and audits \\
+LaTeX article and figures & \partcov: modest article & \partcov: short source/PDF & \partcov: PDF only & \mostly: source and PDF & \good: substantial paper & \good: source and PDF & \good: source and clean PDF & \good: strong workflow & \good: best polished paper \\
+Gaussian covariance path \(\Sigma_t\) & \good: correct & \good: correct & \good: correct & \good: correct & \good: correct & \good: correct & \good: correct & \good: correct & \good: correct \\
+General Gaussian \(T_t\) & \missing: commuting only & \missing: ODE numerics only & \missing: commuting only & \missing: commuting only & \missing: Euler numerics & \missing: commuting/time-ordered only & \partcov: time-ordered only & \good: correct formula & \mostly: endpoint theorem strongest \\
+\(T_1\) vs OT theorem & \partcov: flawed proof & \weak: asserted, not proved & \partcov: numerical only & \partcov: commuting only & \partcov: overclaimed & \partcov: commuting plus numeric contrast & \mostly: true SPD criterion & \good: correct & \good: clearest explanation \\
+Reproducibility and tests & \weak: no deps/build/tests & \weak: no deps/tests & \weak: no deps/tests/source & \partcov: build path, no tests & \partcov: no tests & \mostly: lockfile, CI, 5 tests pass & \mostly: strong tests present, not locally run & \good: Makefile and checks & \good: pinned deps, tests, source \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{landscape}
+
+\section*{Main Risk Recap}
+
+\begin{center}
+\centering
+\captionof*{table}{Highest-impact audit findings}
+\begin{tabularx}{\textwidth}{L{4.0cm} L{2.1cm} Y}
+\toprule
+Project & Severity & Finding \\
+\midrule
+\project{antigravity-olivier/} & High & Does not satisfy the PyTorch requirement and gives an unreliable proof strategy for the noncommuting Gaussian flow map. \\
+\project{antigravity-antoine/} & High & Has executed PyTorch notebooks, but no closed-form Gaussian \(T_t\), no proof of the iff OT claim, and weak reproducibility infrastructure. \\
+\project{codex-clement/} & High & Has no general closed-form noncommuting \(T_t\), and the submitted repository lacks README, dependency file, LaTeX source, tests, and executed notebooks. \\
+\project{codex-kimia/} & High & Correctly proves only the commuting Gaussian case; the requested noncommuting \(T_t\) and iff characterization are absent. \\
+\project{claude-gabriel/} & High & States a global Gaussian iff theorem but proves only sufficiency plus infinitesimal necessity near commuting covariances. \\
+\project{hermes-jeremie/} & High & Clean PyTorch/test repository, but the notebooks are unexecuted and the Gaussian section lacks explicit general \(T_t\) and structural iff criterion. \\
+\project{openclaw-jeremie/} & High & Strong repo and true time-ordered theorem, but still lacks the explicit closed-form noncommuting \(T_t\) requested in \texttt{todo.md}. \\
+\project{codex-gabriel/} & Medium & Mostly polish risks: VP naming convention, float placement, and environment pinning. \\
+\project{emmanuel/} & Medium & Best overall, but the main numerical implementation is NumPy/SciPy-first despite the PyTorch-centered request. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section*{Mathematical Bottom Line}
+
+The central mathematical discriminator is the Gaussian flow-map theorem. The
+correct noncommuting formula is not obtained by treating the time-varying matrix
+velocity as if all matrices commute. In the clean formulation, the endpoint map
+is
+\[
+T_1 =
+\Sigma_0^{1/2}
+\left(\Sigma_0^{-1/2}\Sigma_1\Sigma_0^{-1/2}\right)^{1/2}
+\Sigma_0^{-1/2},
+\]
+which pushes \(\Sigma_0\) to \(\Sigma_1\). It matches the Gaussian optimal
+transport map only when this endpoint map is symmetric positive definite,
+equivalently here when \(\Sigma_0\) and \(\Sigma_1\) commute. The full
+intermediate closed form requires a congruence expression rather than a naive
+scalar or commuting-matrix simplification. This is exactly where
+\project{codex-gabriel/} and \project{emmanuel/} separate themselves from the
+middle tier, and where \project{openclaw-jeremie/} and \project{hermes-jeremie/} remain one step
+short despite otherwise strong engineering.
+
+The upper-middle and middle-tier projects are useful for exposition, figures,
+and numerical intuition, but their Gaussian sections should be repaired before
+adoption.
+\project{antigravity-antoine/} is slightly better than
+\project{antigravity-olivier/} because it has executed PyTorch notebooks, but
+its Gaussian section still stops at ODE numerics and assertion. \project{antigravity-olivier/}
+should be treated with even more caution because its proof uses an invalid
+symmetry argument for a time-dependent matrix ODE and its core notebook path
+misses the PyTorch requirement.
+
+\section*{Recommended Consolidation Plan}
+
+\begin{enumerate}
+\item Select \project{emmanuel/} as the final paper-first base, or
+  \project{codex-gabriel/} as the final PyTorch-first base.
+\item Import useful PyTorch structure, CI/tests, and finite-assignment or
+  visual ideas from \project{openclaw-jeremie/}, \project{hermes-jeremie/}, and
+  \project{claude-gabriel/}, only after keeping the top-tier Gaussian theorem intact.
+\item Reuse \project{codex-kimia/} or \project{codex-clement/} material only for
+  compact exposition and figures, not for the Gaussian theorem.
+\item Do not import \project{antigravity-antoine/} or
+  \project{antigravity-olivier/} formulas without rechecking them against the
+  exact noncommuting covariance calculation and the exact OT comparison.
+\item Add one final cross-project regression check: verify endpoint covariance,
+  \(T_1\) equality with Gaussian OT, and schedule independence on noncommuting
+  covariance matrices.
+\end{enumerate}
+
+\end{document}
