@@ -1,0 +1,98 @@
+degree16_openai_principalization_probe
+p=101 k=2 pair_limit=8
+polynomial_degree=16
+field_polynomial=x^16 - 272*x^14 + 26992*x^12 - 1198272*x^10 + 26343648*x^8 - 287675136*x^6 + 1784873728*x^4 - 5718017024*x^2 + 11249572096
+field_build_ms=1
+automorphisms=16
+cm_index=7
+cm_detection_error=5.710311753994138970 E-72
+nf_and_aut_ms=21
+split_prime_ideals=16
+cm_pairs_total=8
+cm_pairs_used=8
+pair_1=[1, 4]
+pair_2=[2, 14]
+pair_3=[3, 7]
+pair_4=[5, 8]
+pair_5=[6, 15]
+pair_6=[9, 13]
+pair_7=[10, 11]
+pair_8=[12, 16]
+prime_pairing_ms=7
+class_number=1024
+class_group_cyc=[8, 8, 8, 2]
+bnf_ms=147
+pair_class_1_P=[1, 0, 1, 0] Pc=[7, 0, 7, 0]
+pair_class_2_P=[3, 2, 5, 1] Pc=[5, 6, 3, 1]
+pair_class_3_P=[7, 4, 7, 0] Pc=[1, 4, 1, 0]
+pair_class_4_P=[5, 2, 3, 1] Pc=[3, 6, 5, 1]
+pair_class_5_P=[3, 4, 5, 1] Pc=[5, 4, 3, 1]
+pair_class_6_P=[7, 2, 3, 0] Pc=[1, 6, 5, 0]
+pair_class_7_P=[5, 0, 3, 1] Pc=[3, 0, 5, 1]
+pair_class_8_P=[1, 2, 5, 0] Pc=[7, 6, 3, 0]
+prime_class_vectors_ms=2
+J_record_count=6561
+J_class_enumeration_ms=445
+collision_search_start
+collision_1
+  left_index=1 right_index=9
+  left_exponents=[0, 0, 0, 0, 0, 0, 0, 0]
+  right_exponents=[2, 2, 0, 0, 0, 0, 0, 0]
+  delta=[-2, -2, 0, 0, 0, 0, 0, 0]
+  class=[0, 0, 0, 0]
+  principal_class_vector=[0, 0, 0, 0]~
+  gamma=[-3648/10201, -4287/10201, -813/10201, 289/10201, -639/10201, 1115/10201, 998/10201, -998/10201, -1339/10201, 2407/10201, 104/10201, -592/10201, -476/10201, -476/10201, -488/10201, -488/10201]~
+  u_embedding=0.96103580998635510540492036473993887715 - 0.27642389897378693305064163526959082942*I
+  abs_u_minus_1=8.425865382214462795 E-111
+collision_2
+  left_index=1 right_index=11
+  left_exponents=[0, 0, 0, 0, 0, 0, 0, 0]
+  right_exponents=[1, 0, 1, 0, 0, 0, 0, 0]
+  delta=[-1, 0, -1, 0, 0, 0, 0, 0]
+  class=[0, 0, 0, 0]
+  principal_class_vector=[0, 0, 0, 0]~
+  gamma=[4/101, 19/101, -27/101, 29/101, -13/101, -11/101, 40/101, 4/101, 0, 0, 0, 0, 0, 0, 0, 0]~
+  u_embedding=0.90893403498337064289351869868018089375 + 0.41693994777287622276078736645326876731*I
+  abs_u_minus_1=1.4155716602026406074 E-72
+collision_3
+  left_index=1 right_index=21
+  left_exponents=[0, 0, 0, 0, 0, 0, 0, 0]
+  right_exponents=[2, 0, 2, 0, 0, 0, 0, 0]
+  delta=[-2, 0, -2, 0, 0, 0, 0, 0]
+  class=[0, 0, 0, 0]
+  principal_class_vector=[0, 0, 0, 0]~
+  gamma=[495/10201, 4548/10201, 4158/10201, -3456/10201, 992/10201, -1538/10201, 708/10201, 2616/10201, 0, 0, 0, 0, 0, 0, 0, 0]~
+  u_embedding=0.65232215990230249538355317559285373745 + 0.75794181814991241085209695786243857344*I
+  abs_u_minus_1=1.3185597642171350818 E-110
+collision_4
+  left_index=1 right_index=25
+  left_exponents=[0, 0, 0, 0, 0, 0, 0, 0]
+  right_exponents=[0, 2, 2, 0, 0, 0, 0, 0]
+  delta=[0, -2, -2, 0, 0, 0, 0, 0]
+  class=[0, 0, 0, 0]
+  principal_class_vector=[0, 0, 0, 0]~
+  gamma=[11934/10201, -1133/10201, 9519/10201, 2028/10201, 31/10201, 8976/10201, 2308/10201, -685/10201, 234/10201, 7224/10201, -5128/10201, 3045/10201, -3768/10201, -1738/10201, 718/10201, -1048/10201]~
+  u_embedding=-0.67067227575148547488518017991374288004 - 0.74175379913979775199933142470983837419*I
+  abs_u_minus_1=3.578064002560884429 E-110
+collision_5
+  left_index=1 right_index=31
+  left_exponents=[0, 0, 0, 0, 0, 0, 0, 0]
+  right_exponents=[0, 1, 0, 1, 0, 0, 0, 0]
+  delta=[0, -1, 0, -1, 0, 0, 0, 0]
+  class=[0, 0, 0, 0]
+  principal_class_vector=[0, 0, 0, 0]~
+  gamma=[17/101, -52/101, 27/101, 29/101, 9/101, 29/101, -40/101, 4/101, 0, 0, 0, 0, 0, 0, 0, 0]~
+  u_embedding=0.19968009207763938779495870360244504492 - 0.97986114364631555982662650622412959328*I
+  abs_u_minus_1=4.711142216995235771 E-72
+collision_6
+  left_index=1 right_index=41
+  left_exponents=[0, 0, 0, 0, 0, 0, 0, 0]
+  right_exponents=[1, 1, 1, 1, 0, 0, 0, 0]
+  delta=[-1, -1, -1, -1, 0, 0, 0, 0]
+  class=[0, 0, 0, 0]
+  principal_class_vector=[0, 0, 0, 0]~
+  gamma=[21/101, 64/101, -6/101, 0, 20/101, 18/101, -36/101, 0, 0, 0, 0, 0, 0, 0, 0, 0]~
+  u_embedding=-0.59003928585454532625600607173181759081 + 0.80737453585573167224620509702360678931*I
+  abs_u_minus_1=7.306630406037654875 E-72
+collisions_reported=6
+collision_search_and_principalization_ms=126

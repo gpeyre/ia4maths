@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.22)  2 JUL 2026 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.22)  3 JUL 2026 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1229,126 +1229,136 @@ ut line 369.
 [9
 
  <./assets/generated/unit_distance_series.pdf>]
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <9> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 404.
+<assets/generated/unit_distance_progress.png, id=304, 821.36426pt x 362.29265pt
+>
+File: assets/generated/unit_distance_progress.png Graphic file (type png)
+<use assets/generated/unit_distance_progress.png>
+Package pdftex.def Info: assets/generated/unit_distance_progress.png  used on i
+nput line 377.
+(pdftex.def)             Requested size: 424.9186pt x 187.42583pt.
  [10
+
+ <./assets/generated/unit_distance_progress.png>]
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <9> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 412.
+ [11
 
 ]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 459.
- [11
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 467.
+ [12
 
 ]
 File: assets/generated/imo_2025_problem1_crop.png Graphic file (type png)
 <use assets/generated/imo_2025_problem1_crop.png>
 Package pdftex.def Info: assets/generated/imo_2025_problem1_crop.png  used on i
-nput line 461.
+nput line 469.
 (pdftex.def)             Requested size: 95.62166pt x 37.55806pt.
 File: assets/generated/unit_distance_series.png Graphic file (type png)
 <use assets/generated/unit_distance_series.png>
 Package pdftex.def Info: assets/generated/unit_distance_series.png  used on inp
-ut line 461.
+ut line 469.
 (pdftex.def)             Requested size: 56.624pt x 37.55525pt.
 File: assets/generated/noogram_flow_matching_site.png Graphic file (type png)
 <use assets/generated/noogram_flow_matching_site.png>
 Package pdftex.def Info: assets/generated/noogram_flow_matching_site.png  used 
-on input line 461.
+on input line 469.
 (pdftex.def)             Requested size: 66.75313pt x 37.54863pt.
 File: assets/generated/paperreview_ai_screenshot.png Graphic file (type png)
 <use assets/generated/paperreview_ai_screenshot.png>
 Package pdftex.def Info: assets/generated/paperreview_ai_screenshot.png  used o
-n input line 461.
+n input line 469.
 (pdftex.def)             Requested size: 66.75313pt x 37.54863pt.
- [12
+ [13
 
 ]
-Overfull \hbox (0.59047pt too wide) in paragraph at lines 501--501
+Overfull \hbox (0.59047pt too wide) in paragraph at lines 509--509
  [][][]  
  []
 
-<assets/arxiv_2602_01372_p1.png, id=388, 614.295pt x 794.97pt>
+<assets/arxiv_2602_01372_p1.png, id=417, 614.295pt x 794.97pt>
 File: assets/arxiv_2602_01372_p1.png Graphic file (type png)
 <use assets/arxiv_2602_01372_p1.png>
-Package pdftex.def Info: assets/arxiv_2602_01372_p1.png  used on input line 501
+Package pdftex.def Info: assets/arxiv_2602_01372_p1.png  used on input line 509
 .
 (pdftex.def)             Requested size: 127.89969pt x 165.51726pt.
-[13
+[14
 
  <./assets/arxiv_2602_01372_p1.png (PNG copy)>]
-<assets/generated/codex_gabriel_page4_crop.png, id=416, 900.36375pt x 940.51375
+<assets/generated/codex_gabriel_page4_crop.png, id=444, 900.36375pt x 940.51375
 pt>
 File: assets/generated/codex_gabriel_page4_crop.png Graphic file (type png)
 <use assets/generated/codex_gabriel_page4_crop.png>
 Package pdftex.def Info: assets/generated/codex_gabriel_page4_crop.png  used on
- input line 535.
+ input line 543.
 (pdftex.def)             Requested size: 144.45955pt x 150.90144pt.
- [14
+ [15
 
  <./assets/generated/codex_gabriel_page4_crop.png (PNG copy)>]
-Overfull \hbox (2.08986pt too wide) in paragraph at lines 617--617
+Overfull \hbox (2.08986pt too wide) in paragraph at lines 625--625
  [][]  
  []
 
-[15
+[16
 
 ]
 File: assets/generated/noogram_flow_matching_site.png Graphic file (type png)
 <use assets/generated/noogram_flow_matching_site.png>
 Package pdftex.def Info: assets/generated/noogram_flow_matching_site.png  used 
-on input line 659.
+on input line 667.
 (pdftex.def)             Requested size: 134.1336pt x 75.45015pt.
-<assets/generated/noogram_flow_matching_github.png, id=469, 1284.8pt x 722.7pt>
+<assets/generated/noogram_flow_matching_github.png, id=498, 1284.8pt x 722.7pt>
 
 File: assets/generated/noogram_flow_matching_github.png Graphic file (type png)
 
 <use assets/generated/noogram_flow_matching_github.png>
 Package pdftex.def Info: assets/generated/noogram_flow_matching_github.png  use
-d on input line 659.
+d on input line 667.
 (pdftex.def)             Requested size: 116.82288pt x 65.71286pt.
- [16
+ [17
 
  <./assets/generated/noogram_flow_matching_github.png>]
 File: assets/generated/imo_2025_problem1_crop.png Graphic file (type png)
 <use assets/generated/imo_2025_problem1_crop.png>
 Package pdftex.def Info: assets/generated/imo_2025_problem1_crop.png  used on i
-nput line 661.
+nput line 669.
 (pdftex.def)             Requested size: 95.62166pt x 37.55806pt.
 File: assets/generated/unit_distance_series.png Graphic file (type png)
 <use assets/generated/unit_distance_series.png>
 Package pdftex.def Info: assets/generated/unit_distance_series.png  used on inp
-ut line 661.
+ut line 669.
 (pdftex.def)             Requested size: 56.624pt x 37.55525pt.
 File: assets/generated/noogram_flow_matching_site.png Graphic file (type png)
 <use assets/generated/noogram_flow_matching_site.png>
 Package pdftex.def Info: assets/generated/noogram_flow_matching_site.png  used 
-on input line 661.
+on input line 669.
 (pdftex.def)             Requested size: 66.75313pt x 37.54863pt.
 File: assets/generated/paperreview_ai_screenshot.png Graphic file (type png)
 <use assets/generated/paperreview_ai_screenshot.png>
 Package pdftex.def Info: assets/generated/paperreview_ai_screenshot.png  used o
-n input line 661.
+n input line 669.
 (pdftex.def)             Requested size: 66.75313pt x 37.54863pt.
- [17
-
-]
-File: assets/generated/paperreview_ai_screenshot.png Graphic file (type png)
-<use assets/generated/paperreview_ai_screenshot.png>
-Package pdftex.def Info: assets/generated/paperreview_ai_screenshot.png  used o
-n input line 703.
-(pdftex.def)             Requested size: 134.1336pt x 75.45015pt.
  [18
 
 ]
-<assets/generated/aissai_logo.png, id=550, 271.0125pt x 95.6072pt>
+File: assets/generated/paperreview_ai_screenshot.png Graphic file (type png)
+<use assets/generated/paperreview_ai_screenshot.png>
+Package pdftex.def Info: assets/generated/paperreview_ai_screenshot.png  used o
+n input line 711.
+(pdftex.def)             Requested size: 134.1336pt x 75.45015pt.
+ [19
+
+]
+<assets/generated/aissai_logo.png, id=579, 271.0125pt x 95.6072pt>
 File: assets/generated/aissai_logo.png Graphic file (type png)
 <use assets/generated/aissai_logo.png>
 Package pdftex.def Info: assets/generated/aissai_logo.png  used on input line 7
-53.
+61.
 (pdftex.def)             Requested size: 69.00182pt x 24.3423pt.
 
-[19
+[20
 
- <./assets/generated/aissai_logo.png>] [20
+ <./assets/generated/aissai_logo.png>] [21
 
 ]
 \tf@nav=\write6
@@ -1365,10 +1375,10 @@ Package rerunfilecheck Info: File `ia4maths_en.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26562 strings out of 478268
- 531661 string characters out of 5846347
- 802862 words of memory out of 5000000
- 44154 multiletter control sequences out of 15000+600000
+ 26573 strings out of 478268
+ 532011 string characters out of 5846347
+ 802985 words of memory out of 5000000
+ 44162 multiletter control sequences out of 15000+600000
  554006 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,432b,1172s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1392,10 +1402,10 @@ st/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
 ype1/public/lm/lmtt8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /lm/lmtt9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msam10.pfb>
-Output written on ia4maths_en.pdf (20 pages, 2843849 bytes).
+Output written on ia4maths_en.pdf (21 pages, 3439036 bytes).
 PDF statistics:
- 696 PDF objects out of 1000 (max. 8388607)
- 592 compressed objects within 6 object streams
- 41 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 726 PDF objects out of 1000 (max. 8388607)
+ 618 compressed objects within 7 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,191 @@
+{
+  "field": "Q(i, sqrt(5))",
+  "field_model": "Q(theta), theta^4 - 8 theta^2 + 36 = 0",
+  "degree": 4,
+  "discriminant": "400",
+  "p": 101,
+  "k": 1,
+  "coeff_bound": 0,
+  "candidate_count": 1,
+  "window_radius": null,
+  "center_direction": null,
+  "direction_patches": false,
+  "edge_closure": true,
+  "ring_of_integers_basis": [
+    "1/4*theta^3 + 1/4*theta^2 + 1/2",
+    "11/24*theta^3 + 1/4*theta^2 + 1/12*theta",
+    "1/2*theta^2",
+    "1/2*theta^3"
+  ],
+  "factorization": [
+    {
+      "ideal": "Fractional ideal (101, 1/24*theta^3 - 1/4*theta^2 - 1/12*theta - 27)",
+      "exponent": 1
+    },
+    {
+      "ideal": "Fractional ideal (101, 1/24*theta^3 - 1/4*theta^2 - 1/12*theta + 19)",
+      "exponent": 1
+    },
+    {
+      "ideal": "Fractional ideal (101, 1/24*theta^3 - 1/4*theta^2 - 1/12*theta + 29)",
+      "exponent": 1
+    },
+    {
+      "ideal": "Fractional ideal (101, 1/24*theta^3 - 1/4*theta^2 - 1/12*theta - 17)",
+      "exponent": 1
+    }
+  ],
+  "num_prime_ideals": 4,
+  "num_conjugate_pairs": 2,
+  "num_J_ideals": 4,
+  "num_directions": 4,
+  "directions": [
+    {
+      "u": "-125/30603*theta^3 + 1782/10201*theta^2 - 1910/30603*theta - 13167/10201",
+      "gamma": "-35/606*theta^3 - 1/101*theta^2 - 25/303*theta + 13/101",
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        1
+      ],
+      "projected": [
+        -0.7498254037643219,
+        0.6616357486333938
+      ],
+      "lattice_coefficients": [
+        "-6759",
+        "-2344",
+        "-1440",
+        "-7128"
+      ]
+    },
+    {
+      "u": "-485/30603*theta^3 - 1782/10201*theta^2 + 3130/30603*theta + 1089/10201",
+      "gamma": "-55/606*theta^3 + 1/101*theta^2 + 115/303*theta + 5/101",
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        1,
+        0
+      ],
+      "projected": [
+        -0.43417616470935705,
+        -0.9008279846886825
+      ],
+      "lattice_coefficients": [
+        "-5319",
+        "4784",
+        "1440",
+        "7128"
+      ]
+    },
+    {
+      "u": "330/10201*theta^3 - 660/10201*theta + 9401/10201",
+      "gamma": "-5/303*theta^3 + 10/303*theta - 99/101",
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        1,
+        1
+      ],
+      "projected": [
+        0.9215763160474463,
+        0.3881972355651407
+      ],
+      "lattice_coefficients": [
+        "9401",
+        "-3960",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "u": "2196/10201*theta^2 - 11543/10201",
+      "gamma": "18/101*theta^2 - 11/101",
+      "from": [
+        0,
+        1
+      ],
+      "to": [
+        1,
+        0
+      ],
+      "projected": [
+        -0.27046368003136945,
+        0.962730179117643
+      ],
+      "lattice_coefficients": [
+        "-2759",
+        "-4392",
+        "0",
+        "-8784"
+      ]
+    }
+  ],
+  "window_center": "0",
+  "window_center_projected": [
+    0.0,
+    0.0
+  ],
+  "window_center_lattice_coefficients": null,
+  "num_points": 5,
+  "num_edges": 4,
+  "points": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      -0.7498254037643219,
+      0.6616357486333938
+    ],
+    [
+      -0.43417616470935705,
+      -0.9008279846886825
+    ],
+    [
+      0.9215763160474463,
+      0.3881972355651407
+    ],
+    [
+      -0.27046368003136945,
+      0.962730179117643
+    ]
+  ],
+  "minkowski_sup_norms": [
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "edges": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      3,
+      2
+    ],
+    [
+      0,
+      4,
+      3
+    ]
+  ]
+}

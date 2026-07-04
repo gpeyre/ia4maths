@@ -1,0 +1,115 @@
+{
+  "field_key": "q_i_sqrt5",
+  "field": "Q(i, sqrt(5))",
+  "p": 101,
+  "k": 1,
+  "radicands": [
+    -1,
+    5
+  ],
+  "degree": 4,
+  "roots_mod_p": [
+    10,
+    45
+  ],
+  "legendre_symbols": [
+    1,
+    1
+  ],
+  "num_split_prime_labels": 4,
+  "num_total_cm_pairs": 2,
+  "num_used_cm_pairs": 2,
+  "cm_pairs": [
+    {
+      "prime": {
+        "signs": [
+          1,
+          -1
+        ],
+        "residues": [
+          10,
+          56
+        ]
+      },
+      "conjugate": {
+        "signs": [
+          -1,
+          -1
+        ],
+        "residues": [
+          91,
+          56
+        ]
+      }
+    },
+    {
+      "prime": {
+        "signs": [
+          1,
+          1
+        ],
+        "residues": [
+          10,
+          45
+        ]
+      },
+      "conjugate": {
+        "signs": [
+          -1,
+          1
+        ],
+        "residues": [
+          91,
+          45
+        ]
+      }
+    }
+  ],
+  "num_j_records": 4,
+  "records_materialized": true,
+  "j_records": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "num_formal_directions": 4,
+  "formal_directions": [
+    {
+      "delta": [
+        0,
+        -1
+      ]
+    },
+    {
+      "delta": [
+        -1,
+        0
+      ]
+    },
+    {
+      "delta": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "delta": [
+        -1,
+        1
+      ]
+    }
+  ]
+}
