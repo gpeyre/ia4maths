@@ -8,13 +8,23 @@ exports.
 
 ## Open The Slides
 
-| Language | Interactive dev server | Static build | PDF |
-| --- | --- | --- | --- |
-| English | [localhost:3030](http://localhost:3030/) | [dist/en/index.html](dist/en/index.html) | [dist/ia4maths_en.pdf](dist/ia4maths_en.pdf) |
-| French | [localhost:3031](http://localhost:3031/) | [dist/fr/index.html](dist/fr/index.html) | [dist/ia4maths_fr.pdf](dist/ia4maths_fr.pdf) |
+| Language | Public interactive deck | Public PDF | Interactive dev server | Static preview |
+| --- | --- | --- | --- | --- |
+| English | [gpeyre.github.io/ia4maths/en](https://gpeyre.github.io/ia4maths/en/) | [ia4maths_en.pdf](https://gpeyre.github.io/ia4maths/ia4maths_en.pdf) | [localhost:3030](http://localhost:3030/) | [localhost:4173](http://localhost:4173/) |
+| French | [gpeyre.github.io/ia4maths/fr](https://gpeyre.github.io/ia4maths/fr/) | [ia4maths_fr.pdf](https://gpeyre.github.io/ia4maths/ia4maths_fr.pdf) | [localhost:3031](http://localhost:3031/) | [localhost:4174](http://localhost:4174/) |
 
-The `localhost` links work while the corresponding Slidev dev server is
-running. The `dist/` links work after `npm run build` and `npm run export:*`.
+The public links work after GitHub Pages is enabled on `main /docs`. The
+`localhost` links work while the corresponding Slidev dev or preview server is
+running.
+
+The static HTML builds in `dist/en` and `dist/fr` are browser apps. Serve them
+over HTTP with the preview commands below; opening `dist/*/index.html` directly
+as a `file://` URL can show a blank page in Chromium-based browsers because ES
+module assets are blocked from local files.
+
+GitHub also displays repository HTML files as source code rather than rendering
+them. The reliable public workflow is to publish the generated `docs/` folder
+with GitHub Pages.
 
 ## Quick Start
 
@@ -30,14 +40,28 @@ Use the keyboard arrows to navigate the interactive slides.
 
 ```bash
 npm run build
+npm run preview:en
+npm run preview:fr
 npm run export:en
 npm run export:fr
+npm run publish:pages
 ```
 
 Outputs:
 
 - Interactive HTML: `dist/en` and `dist/fr`
+- GitHub Pages folder: `../docs`
+- Local static preview: http://localhost:4173/ and http://localhost:4174/
 - PDF decks: `dist/ia4maths_en.pdf` and `dist/ia4maths_fr.pdf`
+
+For a full public rebuild:
+
+```bash
+npm run build:pages
+```
+
+Then push the repository and set GitHub Pages to
+`Settings -> Pages -> Deploy from a branch -> main /docs`.
 
 ## Source Layout
 

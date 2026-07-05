@@ -5,11 +5,15 @@
   "scripts": {
     "dev:en": "slidev slides.en.md -p 3030",
     "dev:fr": "slidev slides.fr.md -p 3031",
-    "build:en": "slidev build slides.en.md --out dist/en",
-    "build:fr": "slidev build slides.fr.md --out dist/fr",
+    "build:en": "slidev build slides.en.md --out dist/en --base ./ --router-mode hash",
+    "build:fr": "slidev build slides.fr.md --out dist/fr --base ./ --router-mode hash",
     "build": "npm run build:en && npm run build:fr",
-    "export:en": "slidev export slides.en.md --output dist/ia4maths_en.pdf",
-    "export:fr": "slidev export slides.fr.md --output dist/ia4maths_fr.pdf"
+    "preview:en": "vite preview --outDir dist/en --host 127.0.0.1 --port 4173",
+    "preview:fr": "vite preview --outDir dist/fr --host 127.0.0.1 --port 4174",
+    "export:en": "slidev export slides.en.md --output dist/ia4maths_en.pdf --wait 1000 --wait-until load",
+    "export:fr": "slidev export slides.fr.md --output dist/ia4maths_fr.pdf --wait 1000 --wait-until load",
+    "publish:pages": "node scripts/publish-pages.mjs",
+    "build:pages": "npm run build && npm run export:en && npm run export:fr && npm run publish:pages"
   },
   "dependencies": {
     "@slidev/cli": "^52.16.0",

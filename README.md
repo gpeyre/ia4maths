@@ -12,7 +12,22 @@ Public GitHub repository: [gpeyre/ia4maths](https://github.com/gpeyre/ia4maths).
 
 ## Slides
 
-Ready-to-read PDFs:
+Recommended public version, once GitHub Pages is enabled for this repository:
+
+- [Slide landing page](https://gpeyre.github.io/ia4maths/)
+- [Interactive English deck](https://gpeyre.github.io/ia4maths/en/)
+- [Interactive French deck](https://gpeyre.github.io/ia4maths/fr/)
+- [English PDF](https://gpeyre.github.io/ia4maths/ia4maths_en.pdf)
+- [French PDF](https://gpeyre.github.io/ia4maths/ia4maths_fr.pdf)
+
+GitHub does not render HTML files from the repository file browser. To make the
+interactive decks clickable for visitors, enable GitHub Pages with:
+`Settings -> Pages -> Deploy from a branch -> main /docs`.
+
+Modern Slidev sources and public-build scripts live in
+[`slides-modern/`](slides-modern/).
+
+Legacy ready-to-read PDFs:
 
 - [French slides](slides/fr/ia4maths_fr.pdf): *IA pour la théorie*.
 - [English slides](slides/en/ia4maths_en.pdf): *AI for Theory*.

@@ -52,46 +52,46 @@ const items = labels[props.lang] ?? labels.en
 .roadmap {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px 22px;
   width: 100%;
-  height: 100%;
-  align-content: center;
+  height: 392px;
+  align-content: start;
 }
 
 .roadmap-card {
   position: relative;
-  min-height: 235px;
+  min-height: 0;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.24);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 44px rgba(15, 23, 42, 0.06);
-  opacity: 0.48;
+  border: 1px solid #d8dee8;
+  background: #ffffff;
+  box-shadow: none;
+  display: grid;
+  grid-template-rows: 82px auto auto auto;
   transform: scale(0.985);
   transition: 200ms ease;
 }
 
 .roadmap-card.active {
-  opacity: 1;
   transform: scale(1);
-  box-shadow: 0 22px 70px rgba(24, 42, 73, 0.13);
+  box-shadow: none;
 }
 
-.roadmap-card.active {
-  border-color: rgba(37, 95, 146, 0.36);
-}
+.roadmap-card.blue { border-left: 5px solid var(--blue); }
+.roadmap-card.teal { border-left: 5px solid var(--teal); }
+.roadmap-card.amber { border-left: 5px solid var(--amber); }
+.roadmap-card.violet { border-left: 5px solid var(--violet); }
 
 .roadmap-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(16,24,40,0.72));
-  z-index: 1;
+  content: none;
 }
 
 .roadmap-image {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  height: 82px;
+  border-bottom: 1px solid #d8dee8;
+  overflow: hidden;
 }
 
 .roadmap-image img {
@@ -101,34 +101,39 @@ const items = labels[props.lang] ?? labels.en
   filter: saturate(0.92) contrast(1.02);
 }
 
+.roadmap-card:not(.active) .roadmap-image img {
+  filter: saturate(0.42) contrast(0.96) brightness(0.96);
+}
+
 .roadmap-kicker,
 .roadmap-card h3,
 .roadmap-card p {
   position: relative;
-  z-index: 2;
   margin-left: 22px;
   margin-right: 22px;
 }
 
 .roadmap-kicker {
-  margin-top: 112px;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.78);
+  margin-top: 10px;
+  font-size: 0.64rem;
+  color: var(--blue);
   font-weight: 820;
   letter-spacing: 0.16em;
 }
 
 .roadmap-card h3 {
-  margin-top: 10px;
-  margin-bottom: 7px;
-  color: #fff;
-  font-size: 1.46rem;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 1.02rem;
   line-height: 1.05;
 }
 
 .roadmap-card p {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.86rem;
-  max-width: 78%;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  max-width: 92%;
+  margin-bottom: 8px;
 }
 </style>
