@@ -19,11 +19,27 @@ const labels = {
   ],
 }
 
-const images = [
-  new URL("../assets/generated/imo_2025_problem1_crop.png", import.meta.url).href,
-  new URL("../assets/generated/unit_distance_series.png", import.meta.url).href,
-  new URL("../assets/generated/noogram_flow_matching_site.png", import.meta.url).href,
-  new URL("../assets/generated/paperreview_ai_screenshot.png", import.meta.url).href,
+const snippets = [
+  [
+    new URL("../assets/generated/imo_2025_problem1_crop.png", import.meta.url).href,
+    new URL("../assets/generated/euler_pinn_blowup_crop.png", import.meta.url).href,
+    new URL("../assets/generated/sphere_packing_lean_crop.png", import.meta.url).href,
+  ],
+  [
+    new URL("../assets/generated/unit_distance_series.png", import.meta.url).href,
+    new URL("../assets/generated/unit_distance_progress.png", import.meta.url).href,
+    new URL("../assets/arxiv_2602_01372_p1.png", import.meta.url).href,
+  ],
+  [
+    new URL("../assets/generated/noogram_flow_matching_site.png", import.meta.url).href,
+    new URL("../assets/generated/noogram_flow_matching_github.png", import.meta.url).href,
+    new URL("../assets/generated/codex_gabriel_page4_crop.png", import.meta.url).href,
+  ],
+  [
+    new URL("../assets/generated/paperreview_ai_screenshot.png", import.meta.url).href,
+    new URL("../assets/generated/aissai_logo.png", import.meta.url).href,
+    new URL("../assets/generated/noogram_flow_matching_site.png", import.meta.url).href,
+  ],
 ]
 
 const palette = ["blue", "teal", "amber", "violet"]
@@ -38,8 +54,15 @@ const items = labels[props.lang] ?? labels.en
       class="roadmap-card"
       :class="[palette[i], { active: active === i + 1 }]"
     >
-      <div class="roadmap-image">
-        <img :src="images[i]" alt="" />
+      <div class="roadmap-patchwork">
+        <div
+          v-for="(image, j) in snippets[i]"
+          :key="image"
+          class="roadmap-snippet"
+          :class="`snippet-${j + 1}`"
+        >
+          <img :src="image" alt="" />
+        </div>
       </div>
       <div class="roadmap-kicker">0{{ i + 1 }}</div>
       <h3>{{ item[0] }}</h3>
@@ -68,13 +91,15 @@ const items = labels[props.lang] ?? labels.en
   background: #ffffff;
   box-shadow: none;
   display: grid;
-  grid-template-rows: 82px auto auto auto;
+  grid-template-rows: 96px auto auto auto;
   transform: scale(0.985);
+  opacity: 0.32;
   transition: 200ms ease;
 }
 
 .roadmap-card.active {
   transform: scale(1);
+  opacity: 1;
   box-shadow: none;
 }
 
@@ -87,21 +112,40 @@ const items = labels[props.lang] ?? labels.en
   content: none;
 }
 
-.roadmap-image {
+.roadmap-patchwork {
   position: relative;
-  height: 82px;
+  height: 96px;
+  display: grid;
+  grid-template-columns: 1.28fr 0.72fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+  padding: 7px;
   border-bottom: 1px solid #d8dee8;
   overflow: hidden;
+  background: #f7f9fc;
 }
 
-.roadmap-image img {
+.roadmap-snippet {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #d8dee8;
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+.roadmap-snippet.snippet-1 {
+  grid-row: 1 / 3;
+}
+
+.roadmap-snippet img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   filter: saturate(0.92) contrast(1.02);
 }
 
-.roadmap-card:not(.active) .roadmap-image img {
+.roadmap-card:not(.active) .roadmap-snippet img {
   filter: saturate(0.42) contrast(0.96) brightness(0.96);
 }
 
@@ -114,7 +158,7 @@ const items = labels[props.lang] ?? labels.en
 }
 
 .roadmap-kicker {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 0.64rem;
   color: var(--blue);
   font-weight: 820;
@@ -122,8 +166,8 @@ const items = labels[props.lang] ?? labels.en
 }
 
 .roadmap-card h3 {
-  margin-top: 5px;
-  margin-bottom: 4px;
+  margin-top: 4px;
+  margin-bottom: 3px;
   color: var(--ink);
   font-size: 1.02rem;
   line-height: 1.05;
@@ -131,7 +175,7 @@ const items = labels[props.lang] ?? labels.en
 
 .roadmap-card p {
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   line-height: 1.2;
   max-width: 92%;
   margin-bottom: 8px;
