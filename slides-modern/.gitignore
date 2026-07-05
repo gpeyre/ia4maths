@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.slidev/
+qa/
+public/
+assets/generated/unit_distance_cover.png

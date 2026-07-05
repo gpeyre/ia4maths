@@ -1,0 +1,22 @@
+{
+  "name": "ia4maths-slidev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:en": "slidev slides.en.md -p 3030",
+    "dev:fr": "slidev slides.fr.md -p 3031",
+    "build:en": "slidev build slides.en.md --out dist/en",
+    "build:fr": "slidev build slides.fr.md --out dist/fr",
+    "build": "npm run build:en && npm run build:fr",
+    "export:en": "slidev export slides.en.md --output dist/ia4maths_en.pdf",
+    "export:fr": "slidev export slides.fr.md --output dist/ia4maths_fr.pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.16.0",
+    "@slidev/theme-default": "^0.25.0",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.55.0"
+  }
+}
